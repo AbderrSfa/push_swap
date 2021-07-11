@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int		ft_put_error(int ret, char *message, t_stacks *stacks)
+int		ft_put_error(int ret, char *error, t_stacks *stacks)
 {
 	if (stacks)
 	{
@@ -9,11 +9,8 @@ int		ft_put_error(int ret, char *message, t_stacks *stacks)
 		if (stacks->stack_b.array)
 			free(stacks->stack_b.array);
 	}
-	if (message)
-	{
-		ft_putstr(message);
-		ft_putchar('\n');
-	}
+	if (error)
+		ft_putendl_fd(error, 2);
 	return (ret);
 }
 

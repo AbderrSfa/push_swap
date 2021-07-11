@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <limits.h>
 
+# define ON 1
+# define OFF 0
+
 typedef struct s_array		t_array;
 struct						s_array
 {
@@ -24,6 +27,7 @@ struct						s_stacks
 // Libft functions:
 void		ft_putchar(char c);
 void		ft_putstr(char *s);
+void		ft_putendl_fd(char *s, int fd);
 int			ft_isdigit(int c);
 char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strdup(const char *s1);

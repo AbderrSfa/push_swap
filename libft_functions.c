@@ -16,6 +16,12 @@ void	ft_putstr(char *s)
 	}
 }
 
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
+}
+
 int	ft_isdigit(int c)
 {
 	if ((c > 47 && c < 58))
