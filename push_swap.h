@@ -33,9 +33,10 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		**ft_split(char const *s, char v);
 
 // push_swap functions:
-int			ft_put_error(char *message, t_stacks *stacks);
+int			ft_put_error(int ret, char *message, t_stacks *stacks);
 int			are_args_valid(char **argv);
 int			duplicate_arg(t_stacks *stacks, int num);
+int			stack_is_sorted(t_stacks *stacks);
 void		init_stacks(int argc, t_stacks *stacks);
 t_stacks	ft_fill_stacks(int argc, char **argv);
 

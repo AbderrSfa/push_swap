@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int		ft_put_error(char *message, t_stacks *stacks)
+int		ft_put_error(int ret, char *message, t_stacks *stacks)
 {
 	if (stacks)
 	{
@@ -9,9 +9,12 @@ int		ft_put_error(char *message, t_stacks *stacks)
 		if (stacks->stack_b.array)
 			free(stacks->stack_b.array);
 	}
-	ft_putstr(message);
-	ft_putchar('\n');
-	return (1);
+	if (message)
+	{
+		ft_putstr(message);
+		ft_putchar('\n');
+	}
+	return (ret);
 }
 
 int		are_args_valid(char **argv)
@@ -51,6 +54,21 @@ int		duplicate_arg(t_stacks *stacks, int num)
 	return (1);
 }
 
+int		stack_is_sorted(t_stacks *stacks)
+{
+	int		i;
+	int		temp;
+
+	i = 0;
+	while (i < stacks->stack_a.size - 1)
+	{
+		if (stacks->stack_a.array[i] > stacks->stack_a.array[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	init_stacks(int argc, t_stacks *stacks)
 {
 	int			size;
@@ -77,9 +95,9 @@ t_stacks	ft_fill_stacks(int argc, char **argv)
 	{
 		num = ft_atoi(*argv);
 		if (num < INT_MIN || num > INT_MAX)
-			exit(ft_put_error("Error", &stacks));
+			exit(ft_put_error(1, "Error", &stacks));
 		if (!duplicate_arg(&stacks, num))
-			exit(ft_put_error("Error", &stacks));
+			exit(ft_put_error(1, "Error", &stacks));
 		stacks.stack_a.array[i] = num;
 		stacks.stack_a.size_used++;
 		argv++;
