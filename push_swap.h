@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/12 17:09:44 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/12 23:54:44 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,9 @@ void		init_stacks(int argc, t_stacks *stacks);
 t_stacks	ft_fill_stacks(int argc, char **argv);
 void		push_stack_down(int *array, int in_use);
 void		pop_stack_up(int *array, int in_use);
+int			get_smallest_index(t_stacks *stacks);
+void		get_smallest_number_to_top(t_stacks *stacks);
 void		sort_three_numbers(t_stacks *stacks);
+void		sort_five_or_four(t_stacks *stacks);
 
 #endif

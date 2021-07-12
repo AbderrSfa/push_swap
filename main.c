@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/12 16:27:36 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/12 23:36:19 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int		main(int argc, char **argv)
 		ft_sa(&stacks, PRINT);
 	if (stacks.stack_a.size == 3)
 		sort_three_numbers(&stacks);
+	if (stacks.stack_a.size == 4 || stacks.stack_a.size == 5)
+		sort_five_or_four(&stacks);
 	print_stacks(&stacks);
 	return (0);
 }
