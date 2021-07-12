@@ -42,7 +42,7 @@ int		duplicate_arg(t_stacks *stacks, int num)
 	int		i;
 
 	i = 0;
-	while (i < stacks->stack_a.size_used)
+	while (i < stacks->stack_a.in_use)
 	{
 		if (num == stacks->stack_a.array[i])
 			return (0);
@@ -75,8 +75,8 @@ void	init_stacks(int argc, t_stacks *stacks)
 	stacks->stack_b.array = (int *)malloc(sizeof(int) * size);
 	stacks->stack_a.size = size;
 	stacks->stack_b.size = size;
-	stacks->stack_a.size_used = 0;
-	stacks->stack_b.size_used = 0;
+	stacks->stack_a.in_use = 0;
+	stacks->stack_b.in_use = 0;
 }
 
 t_stacks	ft_fill_stacks(int argc, char **argv)
@@ -96,7 +96,7 @@ t_stacks	ft_fill_stacks(int argc, char **argv)
 		if (!duplicate_arg(&stacks, num))
 			exit(ft_put_error(1, "Error", &stacks));
 		stacks.stack_a.array[i] = num;
-		stacks.stack_a.size_used++;
+		stacks.stack_a.in_use++;
 		argv++;
 		i++;
 	}

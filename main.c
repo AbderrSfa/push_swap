@@ -6,13 +6,13 @@ void	print_stacks(t_stacks *stacks)
 
 	i = 0;
 	printf("/*****************************stack_a****************************/\n");
-	while (i < stacks->stack_a.size_used)
-		printf("|stack_a size= %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_a.size, stacks->stack_a.size_used,  stacks->stack_a.array[i++]);
+	while (i < stacks->stack_a.in_use)
+		printf("|stack_a size= %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_a.size, stacks->stack_a.in_use,  stacks->stack_a.array[i++]);
 
 	printf("/*****************************stack_b****************************/\n");
 	i = 0;
-	while (i < stacks->stack_b.size_used)
-		printf("|stack_b size = %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_b.size, stacks->stack_b.size_used, stacks->stack_b.array[i++]);
+	while (i < stacks->stack_b.in_use)
+		printf("|stack_b size = %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_b.size, stacks->stack_b.in_use, stacks->stack_b.array[i++]);
 }
 
 int		main(int argc, char **argv)

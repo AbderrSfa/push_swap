@@ -14,7 +14,7 @@ struct						s_array
 {
 	int						*array;
 	int						size;
-	int						size_used;
+	int						in_use;
 };
 
 typedef struct s_stacks		t_stacks;
