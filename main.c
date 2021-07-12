@@ -28,7 +28,7 @@ int		main(int argc, char **argv)
 		exit(ft_put_error(0, NULL, &stacks));
 	print_stacks(&stacks);
 	if (stacks.stack_a.size == 2)
-		ft_sa(&stacks, ON);
+		ft_sa(&stacks, PRINT);
 	print_stacks(&stacks);
 	return (0);
 }

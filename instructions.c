@@ -5,7 +5,7 @@ void	ft_sa(t_stacks *stacks, int print)
 	int		temp;
 
 	temp = 0;
-	if (print == ON)
+	if (print == PRINT)
 		ft_putendl_fd("sa", 1);
 	if (stacks->stack_a.in_use > 1)
 	{
@@ -20,7 +20,7 @@ void	ft_sb(t_stacks *stacks, int print)
 	int		temp;
 
 	temp = 0;
-	if (print == ON)
+	if (print == PRINT)
 		ft_putendl_fd("sb", 1);
 	if (stacks->stack_b.in_use > 1)
 	{
@@ -33,8 +33,8 @@ void	ft_sb(t_stacks *stacks, int print)
 void	ft_ss(t_stacks *stacks)
 {
 	ft_putendl_fd("ss", 1);
-	ft_sa(stacks, OFF);
-	ft_sb(stacks, OFF);
+	ft_sa(stacks, NO_PRINT);
+	ft_sb(stacks, NO_PRINT);
 }
 
 void	push_stack_down(int *array, int in_use)
@@ -98,31 +98,60 @@ void	ft_pa(t_stacks *stacks)
 	stacks->stack_b.in_use--;
 }
 
-void	ft_rb(t_stacks *stacks, int print)
-{
-	int		temp;
-
-	if (print == ON)
-	ft_putendl_fd("rb", 1);
-	temp = stacks->stack_b.array[0];
-	pop_stack_up(stacks->stack_b.array, stacks->stack_b.in_use);
-	stacks->stack_b.array[stacks->stack_b.in_use - 1] = temp;
-}
-
 void	ft_ra(t_stacks *stacks, int print)
 {
 	int		temp;
 
-	if (print == ON)
+	if (print == PRINT)
 		ft_putendl_fd("ra", 1);
 	temp = stacks->stack_a.array[0];
 	pop_stack_up(stacks->stack_a.array, stacks->stack_a.in_use);
 	stacks->stack_a.array[stacks->stack_a.in_use - 1] = temp;
 }
 
+void	ft_rb(t_stacks *stacks, int print)
+{
+	int		temp;
+
+	if (print == PRINT)
+		ft_putendl_fd("rb", 1);
+	temp = stacks->stack_b.array[0];
+	pop_stack_up(stacks->stack_b.array, stacks->stack_b.in_use);
+	stacks->stack_b.array[stacks->stack_b.in_use - 1] = temp;
+}
+
 void	ft_rr(t_stacks *stacks)
 {
 	ft_putendl_fd("rr", 1);
-	ft_ra(stacks, OFF);
-	ft_rb(stacks, OFF);
+	ft_ra(stacks, NO_PRINT);
+	ft_rb(stacks, NO_PRINT);
+}
+
+void	ft_rra(t_stacks *stacks, int print)
+{
+	int		temp;
+
+	if (print == PRINT)
+		ft_putendl_fd("rra", 1);
+	temp = stacks->stack_a.array[stacks->stack_a.in_use - 1];
+	push_stack_down(stacks->stack_a.array, stacks->stack_a.in_use);
+	stacks->stack_a.array[0] = temp;
+}
+
+void	ft_rrb(t_stacks *stacks, int print)
+{
+	int		temp;
+
+	if (print == PRINT)
+		ft_putendl_fd("rrb", 1);
+	temp = stacks->stack_b.array[stacks->stack_b.in_use - 1];
+	push_stack_down(stacks->stack_b.array, stacks->stack_b.in_use);
+	stacks->stack_b.array[0] = temp;
+}
+
+void	ft_rrr(t_stacks *stacks)
+{
+	ft_putendl_fd("rrr", 1);
+	ft_rra(stacks, NO_PRINT);
+	ft_rra(stacks, NO_PRINT);
 }

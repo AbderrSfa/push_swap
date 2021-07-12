@@ -1,13 +1,13 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
-# define ON 1
-# define OFF 0
+# define PRINT 1
+# define NO_PRINT 0
 
 typedef struct s_array		t_array;
 struct						s_array
@@ -40,6 +40,11 @@ char		**ft_split(char const *s, char v);
 void		ft_sa(t_stacks *stacks, int print);
 void		ft_sb(t_stacks *stacks, int print);
 void		ft_ss(t_stacks *stacks);
+void		ft_pa(t_stacks *stacks);
+void		ft_pb(t_stacks *stacks);
+void		ft_ra(t_stacks *stacks, int print);
+void		ft_rb(t_stacks *stacks, int print);
+void		ft_rr(t_stacks *stacks);
 
 // push_swap functions:
 int			ft_put_error(int ret, char *message, t_stacks *stacks);
@@ -48,5 +53,7 @@ int			duplicate_arg(t_stacks *stacks, int num);
 int			stack_is_sorted(t_stacks *stacks);
 void		init_stacks(int argc, t_stacks *stacks);
 t_stacks	ft_fill_stacks(int argc, char **argv);
+void		push_stack_down(int *array, int in_use);
+void		pop_stack_up(int *array, int in_use);
 
 #endif
