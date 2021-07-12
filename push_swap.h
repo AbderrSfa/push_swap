@@ -36,6 +36,11 @@ long		ft_atoi(const char *str);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		**ft_split(char const *s, char v);
 
+//push_swap instructions:
+void		ft_sa(t_stacks *stacks, int print);
+void		ft_sb(t_stacks *stacks, int print);
+void		ft_ss(t_stacks *stacks);
+
 // push_swap functions:
 int			ft_put_error(int ret, char *message, t_stacks *stacks);
 int			are_args_valid(char **argv);

@@ -27,5 +27,8 @@ int		main(int argc, char **argv)
 	if (stack_is_sorted(&stacks))
 		exit(ft_put_error(0, NULL, &stacks));
 	print_stacks(&stacks);
+	if (stacks.stack_a.size == 2)
+		ft_sa(&stacks, ON);
+	print_stacks(&stacks);
 	return (0);
 }
