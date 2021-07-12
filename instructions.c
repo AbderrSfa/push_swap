@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-ft_sa(t_stacks *stacks, int print)
+void	ft_sa(t_stacks *stacks, int print)
 {
 	int		temp;
 
@@ -15,7 +15,7 @@ ft_sa(t_stacks *stacks, int print)
 	}
 }
 
-ft_sa(t_stacks *stacks, int print)
+void	ft_sb(t_stacks *stacks, int print)
 {
 	int		temp;
 
@@ -30,7 +30,7 @@ ft_sa(t_stacks *stacks, int print)
 	}
 }
 
-ft_ss(t_stacks *stacks)
+void	ft_ss(t_stacks *stacks)
 {
 	ft_putendl_fd("sb", 1);
 	ft_sa(stacks, OFF);
