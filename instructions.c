@@ -97,3 +97,32 @@ void	ft_pa(t_stacks *stacks)
 	stacks->stack_a.in_use++;
 	stacks->stack_b.in_use--;
 }
+
+void	ft_rb(t_stacks *stacks, int print)
+{
+	int		temp;
+
+	if (print == ON)
+	ft_putendl_fd("rb", 1);
+	temp = stacks->stack_b.array[0];
+	pop_stack_up(stacks->stack_b.array, stacks->stack_b.in_use);
+	stacks->stack_b.array[stacks->stack_b.in_use - 1] = temp;
+}
+
+void	ft_ra(t_stacks *stacks, int print)
+{
+	int		temp;
+
+	if (print == ON)
+		ft_putendl_fd("ra", 1);
+	temp = stacks->stack_a.array[0];
+	pop_stack_up(stacks->stack_a.array, stacks->stack_a.in_use);
+	stacks->stack_a.array[stacks->stack_a.in_use - 1] = temp;
+}
+
+void	ft_rr(t_stacks *stacks)
+{
+	ft_putendl_fd("rr", 1);
+	ft_ra(stacks, OFF);
+	ft_rb(stacks, OFF);
+}
