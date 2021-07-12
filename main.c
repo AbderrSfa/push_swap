@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
+/*   Updated: 2021/07/12 16:27:36 by asfaihi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	print_stacks(t_stacks *stacks)
@@ -29,6 +41,8 @@ int		main(int argc, char **argv)
 	print_stacks(&stacks);
 	if (stacks.stack_a.size == 2)
 		ft_sa(&stacks, PRINT);
+	if (stacks.stack_a.size == 3)
+		sort_three_numbers(&stacks);
 	print_stacks(&stacks);
 	return (0);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
+/*   Updated: 2021/07/12 17:09:44 by asfaihi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -45,6 +57,9 @@ void		ft_pb(t_stacks *stacks);
 void		ft_ra(t_stacks *stacks, int print);
 void		ft_rb(t_stacks *stacks, int print);
 void		ft_rr(t_stacks *stacks);
+void		ft_rra(t_stacks *stacks, int print);
+void		ft_rrb(t_stacks *stacks, int print);
+void		ft_rrr(t_stacks *stacks);
 
 // push_swap functions:
 int			ft_put_error(int ret, char *message, t_stacks *stacks);
@@ -55,5 +70,6 @@ void		init_stacks(int argc, t_stacks *stacks);
 t_stacks	ft_fill_stacks(int argc, char **argv);
 void		push_stack_down(int *array, int in_use);
 void		pop_stack_up(int *array, int in_use);
+void		sort_three_numbers(t_stacks *stacks);
 
 #endif
