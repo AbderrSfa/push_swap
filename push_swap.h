@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 12:18:52 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 15:33:28 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,10 @@ void		get_smallest_to_top_ten(t_stacks *stacks);
 void		swap_values(int *a, int *b);
 int			*init_array(t_stacks *stacks);
 int			*sort_array(t_stacks *stacks);
+void		get_biggest_to_top(t_stacks *stacks);
 
 void		sort_three_numbers(t_stacks *stacks);
-void		sort_five_or_four(t_stacks *stacks);
+void		sort_four_or_five(t_stacks *stacks);
 void		sort_six_to_ten(t_stacks *stacks);
 void		sort_one_hundred(t_stacks *stacks);
 

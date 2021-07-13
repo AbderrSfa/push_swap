@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_array.c                                       :+:      :+:    :+:   */
+/*   sort_ten.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:38 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 12:00:07 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 15:33:58 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sort_six_to_ten(t_stacks *stacks)
 		get_smallest_to_top_ten(stacks);
 		ft_pb(stacks);
 	}
-	sort_five_or_four(stacks);
+	sort_four_or_five(stacks);
 	while (stacks->stack_a.in_use != stacks->stack_a.size)
 		ft_pa(stacks);
 }

@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 12:04:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 14:10:18 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 15:37:03 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	move_to_top(t_stacks *stacks, int index)
 	{
 		if (index > midway)
 		{
-			ft_rra(index, PRINT);
+			ft_rra(stacks, PRINT);
 			index++;
 			if (index == stacks->stack_a.in_use)
 				break;
@@ -118,6 +118,36 @@ int		get_chunk_endpoint(int *sorted_array, int size, int part, int chunk)
 	return (chunk_endpoint);
 }
 
+void	sort_rest_of_numbers(t_stacks *stacks, int used_size)
+{
+	if (!stack_is_sorted(stacks))
+	{
+		while (stacks->stack_a.in_use >= 5)
+		{
+			get_smallest_to_top_ten(stacks);
+			ft_pb(stacks);
+		}
+		sort_four_or_five(stacks);
+		while (stacks->stack_a.in_use != used_size)
+			ft_pa(stacks);
+	}
+}
+
+void	sort_rest(t_stacks *stacks)
+{
+	if (stacks->stack_a.in_use == 2)
+	{
+		if (!stack_is_sorted(stacks))
+			ft_sa(stacks, PRINT);
+	}
+	if (stacks->stack_a.in_use == 3)
+		sort_three_numbers(stacks);
+	if (stacks->stack_a.in_use == 4 || stacks->stack_a.in_use == 5)
+		sort_four_or_five(stacks);
+	if (stacks->stack_a.in_use > 5)
+		sort_rest_of_numbers(stacks, stacks->stack_a.in_use);
+}
+
 void	sort_one_hundred(t_stacks *stacks)
 {
 	int		*sorted_array;
@@ -131,5 +161,12 @@ void	sort_one_hundred(t_stacks *stacks)
 		chunk_endpoint = get_chunk_endpoint(sorted_array, stacks->stack_a.size, i, 4);
 		move_to_b(stacks, chunk_endpoint);
 		i++;
+	}
+	free(sorted_array);
+	sort_rest(stacks);
+	while (stacks->stack_b.in_use != 0)
+	{
+		get_biggest_to_top(stacks);
+		ft_pa(stacks);
 	}
 }

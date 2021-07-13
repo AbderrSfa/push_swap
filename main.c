@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 12:16:44 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 14:30:28 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		main(int argc, char **argv)
 	else if (stacks.stack_a.size == 3)
 		sort_three_numbers(&stacks);
 	else if (stacks.stack_a.size == 4 || stacks.stack_a.size == 5)
-		sort_five_or_four(&stacks);
+		sort_four_or_five(&stacks);
 	else if (stacks.stack_a.size > 5 && stacks.stack_a.size <= 10)
 		sort_six_to_ten(&stacks);
 	else if (stacks.stack_a.size > 10 && stacks.stack_a.size <= 100)
