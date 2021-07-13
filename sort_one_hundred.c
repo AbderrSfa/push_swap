@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 12:04:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 13:18:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 14:10:18 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,26 @@ int		get_number_within_chunk(t_stacks *stacks, int chunk_endpoint)
 	return (-1);
 }
 
-void	move_to_top(t_stacks *stacks, int chunk_endpoint)
+void	move_to_top(t_stacks *stacks, int index)
 {
-	
+	int		midway;
+
+	midway = stacks->stack_a.in_use / 2;
+	while (index != 0)
+	{
+		if (index > midway)
+		{
+			ft_rra(index, PRINT);
+			index++;
+			if (index == stacks->stack_a.in_use)
+				break;
+		}
+		else
+		{
+			ft_ra(stacks, PRINT);
+			index--;
+		}
+	}
 }
 
 void	move_to_b(t_stacks *stacks, int chunk_endpoint)
