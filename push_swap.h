@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 15:33:28 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 16:37:18 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ struct						s_stacks
 	t_array					stack_a;
 	t_array					stack_b;
 };
+
+
+/* typedef struct s_vector
+{
+	int	*vector;
+	int	size;
+	int	used_size;
+}				t_vector;
+
+typedef struct s_stacks
+{
+	t_vector	stack_a;
+	t_vector	stack_b;
+}				t_stacks; */
 
 // Libft functions:
 void		ft_putchar(char c);
@@ -82,5 +96,6 @@ void		sort_three_numbers(t_stacks *stacks);
 void		sort_four_or_five(t_stacks *stacks);
 void		sort_six_to_ten(t_stacks *stacks);
 void		sort_one_hundred(t_stacks *stacks);
+void		ft_one_handred(t_stacks *stacks);
 
 #endif

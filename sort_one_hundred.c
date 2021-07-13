@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 12:04:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 15:37:03 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 16:09:54 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,17 @@ void	move_to_top(t_stacks *stacks, int index)
 	midway = stacks->stack_a.in_use / 2;
 	while (index != 0)
 	{
-		if (index > midway)
+		if (index <= midway)
+		{
+			ft_ra(stacks, PRINT);
+			index--;
+		}
+		else
 		{
 			ft_rra(stacks, PRINT);
 			index++;
 			if (index == stacks->stack_a.in_use)
 				break;
-		}
-		else
-		{
-			ft_ra(stacks, PRINT);
-			index--;
 		}
 	}
 }

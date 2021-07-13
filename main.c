@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 14:30:28 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 16:38:57 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int		main(int argc, char **argv)
 	else if (stacks.stack_a.size > 5 && stacks.stack_a.size <= 10)
 		sort_six_to_ten(&stacks);
 	else if (stacks.stack_a.size > 10 && stacks.stack_a.size <= 100)
-		sort_one_hundred(&stacks);
+		ft_one_handred(&stacks);
+		//sort_one_hundred(&stacks);
 	print_stacks(&stacks);
 	return (0);
 }
