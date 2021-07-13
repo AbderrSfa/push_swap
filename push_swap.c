@@ -6,13 +6,13 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:40 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/12 16:27:41 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/13 11:06:53 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_put_error(int ret, char *error, t_stacks *stacks)
+int		end_program(int ret, char *error, t_stacks *stacks)
 {
 	if (stacks)
 	{
@@ -104,9 +104,9 @@ t_stacks	ft_fill_stacks(int argc, char **argv)
 	{
 		num = ft_atoi(*argv);
 		if (num < INT_MIN || num > INT_MAX)
-			exit(ft_put_error(1, "Error", &stacks));
+			exit(end_program(1, "Error", &stacks));
 		if (!duplicate_arg(&stacks, num))
-			exit(ft_put_error(1, "Error", &stacks));
+			exit(end_program(1, "Error", &stacks));
 		stacks.stack_a.array[i] = num;
 		stacks.stack_a.in_use++;
 		argv++;

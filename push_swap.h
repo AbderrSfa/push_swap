@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/12 23:54:44 by abderr_sfa       ###   ########.fr       */
+/*   Updated: 2021/07/13 11:25:12 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		ft_rrb(t_stacks *stacks, int print);
 void		ft_rrr(t_stacks *stacks);
 
 // push_swap functions:
-int			ft_put_error(int ret, char *message, t_stacks *stacks);
+int			end_program(int ret, char *message, t_stacks *stacks);
 int			are_args_valid(char **argv);
 int			duplicate_arg(t_stacks *stacks, int num);
 int			stack_is_sorted(t_stacks *stacks);
@@ -71,8 +71,10 @@ t_stacks	ft_fill_stacks(int argc, char **argv);
 void		push_stack_down(int *array, int in_use);
 void		pop_stack_up(int *array, int in_use);
 int			get_smallest_index(t_stacks *stacks);
-void		get_smallest_number_to_top(t_stacks *stacks);
+void		get_smallest_to_top_five(t_stacks *stacks);
+void		get_smallest_to_top_ten(t_stacks *stacks);
 void		sort_three_numbers(t_stacks *stacks);
 void		sort_five_or_four(t_stacks *stacks);
+void		sort_six_to_ten(t_stacks *stacks);
 
 #endif
