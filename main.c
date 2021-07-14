@@ -6,7 +6,7 @@
 /*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/14 18:28:11 by abderr_sfa       ###   ########.fr       */
+/*   Updated: 2021/07/14 19:56:15 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ int		main(int argc, char **argv)
 	else if (stacks.stack_a.size > 100)
 		sort_five_hundred(&stacks);
 	print_stack(&stacks);
-	return (0);
+	return (end_program(0, NULL, &stacks));
 }
