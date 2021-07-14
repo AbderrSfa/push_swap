@@ -6,7 +6,7 @@
 /*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/14 18:06:32 by abderr_sfa       ###   ########.fr       */
+/*   Updated: 2021/07/14 18:43:08 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,24 @@ t_stacks	ft_fill_stacks(int argc, char **argv);
 void		push_stack_down(int *array, int in_use);
 void		pop_stack_up(int *array, int in_use);
 int			get_smallest_index(t_stacks *stacks);
+int			get_biggest_index(t_stacks *stacks);
 void		get_smallest_to_top_five(t_stacks *stacks);
 void		get_smallest_to_top_ten(t_stacks *stacks);
 void		swap_values(int *a, int *b);
 int			*init_array(t_stacks *stacks);
 int			*sort_array(t_stacks *stacks);
+int			get_chunk_endpoint(int *sorted_array, int size, int part, int chunk);
+int			get_number_within_chunk(t_stacks *stacks, int chunk_endpoint);
+void		move_to_top(t_stacks *stacks, int index);
+void		move_to_b(t_stacks *stacks, int chunk_endpoint);
+void		sort_rest_of_numbers(t_stacks *stacks, int used_size);
+void		sort_rest(t_stacks *stacks);
 void		get_biggest_to_top(t_stacks *stacks);
-
+void		sort_more_than_hundred(t_stacks *stacks);
 void		sort_three_numbers(t_stacks *stacks);
 void		sort_four_or_five(t_stacks *stacks);
 void		sort_six_to_ten(t_stacks *stacks);
 void		sort_one_hundred(t_stacks *stacks);
-void		ft_one_handred(t_stacks *stacks);
+void		sort_five_hundred(t_stacks *stacks);
 
 #endif
