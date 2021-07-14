@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 16:38:57 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/14 18:06:48 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stacks(t_stacks *stacks)
+void	print_stack(t_stacks *stacks)
 {
 	int i;
 
@@ -20,11 +20,6 @@ void	print_stacks(t_stacks *stacks)
 	printf("/*****************************stack_a****************************/\n");
 	while (i < stacks->stack_a.in_use)
 		printf("|stack_a size= %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_a.size, stacks->stack_a.in_use,  stacks->stack_a.array[i++]);
-
-	printf("/*****************************stack_b****************************/\n");
-	i = 0;
-	while (i < stacks->stack_b.in_use)
-		printf("|stack_b size = %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_b.size, stacks->stack_b.in_use, stacks->stack_b.array[i++]);
 }
 
 int		main(int argc, char **argv)
@@ -38,7 +33,6 @@ int		main(int argc, char **argv)
 	stacks = ft_fill_stacks(argc, argv);
 	if (stack_is_sorted(&stacks))
 		exit(end_program(0, NULL, &stacks));
-	print_stacks(&stacks);
 	if (stacks.stack_a.size == 2)
 		ft_sa(&stacks, PRINT);
 	else if (stacks.stack_a.size == 3)
@@ -48,8 +42,7 @@ int		main(int argc, char **argv)
 	else if (stacks.stack_a.size > 5 && stacks.stack_a.size <= 10)
 		sort_six_to_ten(&stacks);
 	else if (stacks.stack_a.size > 10 && stacks.stack_a.size <= 100)
-		ft_one_handred(&stacks);
-		//sort_one_hundred(&stacks);
-	print_stacks(&stacks);
+		sort_one_hundred(&stacks);
+	print_stack(&stacks);
 	return (0);
 }

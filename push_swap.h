@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 16:37:18 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/14 18:06:32 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,6 @@ struct						s_stacks
 	t_array					stack_a;
 	t_array					stack_b;
 };
-
-
-/* typedef struct s_vector
-{
-	int	*vector;
-	int	size;
-	int	used_size;
-}				t_vector;
-
-typedef struct s_stacks
-{
-	t_vector	stack_a;
-	t_vector	stack_b;
-}				t_stacks; */
 
 // Libft functions:
 void		ft_putchar(char c);

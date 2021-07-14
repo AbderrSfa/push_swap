@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:40 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/13 11:06:53 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/14 18:03:39 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ int		duplicate_arg(t_stacks *stacks, int num)
 	while (i < stacks->stack_a.in_use)
 	{
 		if (num == stacks->stack_a.array[i])
+		{
+			printf("***%d***", num);
 			return (0);
+		}
 		i++;
 	}
 	return (1);
