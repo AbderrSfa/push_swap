@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_five_hundred.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/15 10:59:34 by asfaihi           #+#    #+#             */
+/*   Updated: 2021/07/15 11:00:34 by asfaihi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	sort_more_than_hundred(t_stacks *stacks)
@@ -27,7 +39,8 @@ void	sort_five_hundred(t_stacks *stacks)
 	sorted_array = sort_array(stacks);
 	while (i != 8)
 	{
-		chunk_endpoint = get_chunk_endpoint(sorted_array, stacks->stack_a.size, i, 8);
+		chunk_endpoint = get_chunk_endpoint(sorted_array,
+				stacks->stack_a.size, i, 8);
 		move_to_b(stacks, chunk_endpoint);
 		i++;
 	}

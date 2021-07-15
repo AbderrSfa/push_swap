@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/14 18:43:08 by abderr_sfa       ###   ########.fr       */
+/*   Updated: 2021/07/15 10:47:47 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strdup(const char *s1);
 size_t		ft_strlen(const char *s);
 long		ft_atoi(const char *str);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		**ft_split(char const *s, char v);
 
 //push_swap instructions:
 void		ft_sa(t_stacks *stacks, int print);
@@ -77,7 +75,7 @@ void		get_smallest_to_top_ten(t_stacks *stacks);
 void		swap_values(int *a, int *b);
 int			*init_array(t_stacks *stacks);
 int			*sort_array(t_stacks *stacks);
-int			get_chunk_endpoint(int *sorted_array, int size, int part, int chunk);
+int			get_chunk_endpoint(int *sorted_arr, int size, int part, int chunk);
 int			get_number_within_chunk(t_stacks *stacks, int chunk_endpoint);
 void		move_to_top(t_stacks *stacks, int index);
 void		move_to_b(t_stacks *stacks, int chunk_endpoint);

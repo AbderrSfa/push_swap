@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/14 19:56:15 by abderr_sfa       ###   ########.fr       */
+/*   Updated: 2021/07/15 11:01:57 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	print_stack(t_stacks *stacks)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	printf("/*****************************stack_a****************************/\n");
+	printf("/**************************stack_a*************************/\n");
 	while (i < stacks->stack_a.in_use)
-		printf("|stack_a size= %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_a.size, stacks->stack_a.in_use,  stacks->stack_a.array[i++]);
+		printf("|stack_a size = %d|\t|size used = %d|\t|num = %d|\n",stacks->stack_a.size, stacks->stack_a.in_use,  stacks->stack_a.array[i++]);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
 
@@ -45,6 +45,8 @@ int		main(int argc, char **argv)
 		sort_one_hundred(&stacks);
 	else if (stacks.stack_a.size > 100)
 		sort_five_hundred(&stacks);
+	////
 	print_stack(&stacks);
+	////
 	return (end_program(0, NULL, &stacks));
 }
