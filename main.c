@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:35 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 11:17:08 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 13:09:58 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	print_stack(t_stacks *stacks)
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
+	char		*str;
 
 	if (argc == 1)
 		return (0);
-	if (!are_args_valid(argv))
-		exit(end_program(1, "Error", NULL));
-	stacks = ft_fill_stacks(argc, argv);
+	str = args_to_string(argv);
+	stacks = ft_fill_stacks(str);
 	if (stack_is_sorted(&stacks))
 		exit(end_program(0, NULL, &stacks));
 	if (stacks.stack_a.size == 2)
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 	else if (stacks.stack_a.size > 100)
 		sort_five_hundred(&stacks);
 	////
-	print_stack(&stacks);
+	//print_stack(&stacks);
 	////
 	return (end_program(0, NULL, &stacks));
 }

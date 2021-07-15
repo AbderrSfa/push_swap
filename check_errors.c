@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:46:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 10:47:14 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 13:09:40 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,17 @@ int	end_program(int ret, char *error, t_stacks *stacks)
 	return (ret);
 }
 
-int	are_args_valid(char **argv)
+int	is_arg_valid(char *str)
 {
 	int		i;
-	int		j;
 
-	i = 1;
-	j = 0;
-	while (argv[i])
+	i = 0;
+	while (str[i])
 	{
-		j = 0;
-		if (argv[i][j] == '-')
-			j++;
-		while (argv[i][j])
-		{
-			if (!ft_isdigit(argv[i][j]))
-				return (0);
-			j++;
-		}
+		if (str[i] != ' ' && str[i] != '-' && !(ft_isdigit(str[i])))
+			return (0);
+		if (str[i] == '-' && !(ft_isdigit(str[i + 1])))
+			return (0);
 		i++;
 	}
 	return (1);

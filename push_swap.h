@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 11:28:32 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 13:11:54 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ size_t		ft_strlen(const char *s);
 long		ft_atoi(const char *str);
 char		*ft_strdup(const char *s1);
 char		*ft_strjoin(const char *s1, const char *s2);
+char		**ft_split(char const *s, char v);
 
 //	push_swap instructions:
 void		ft_sa(t_stacks *stacks, int print);
@@ -60,11 +61,12 @@ void		ft_rrb(t_stacks *stacks, int print);
 void		ft_rrr(t_stacks *stacks);
 
 // Initial setup:
-int			are_args_valid(char **argv);
+char		*args_to_string(char **argv);
+int			is_arg_valid(char *str);
 int			duplicate_arg(t_stacks *stacks, int num);
 int			stack_is_sorted(t_stacks *stacks);
-void		init_stacks(int argc, t_stacks *stacks);
-t_stacks	ft_fill_stacks(int argc, char **argv);
+char		**init_stacks(char *string, t_stacks *stacks);
+t_stacks	ft_fill_stacks(char *str);
 
 // Sort array:
 void		swap_values(int *a, int *b);
