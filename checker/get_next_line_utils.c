@@ -1,53 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_functions_2.c                                :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 10:43:23 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 17:28:12 by asfaihi          ###   ########.fr       */
+/*   Created: 2020/01/29 14:07:50 by asfaihi           #+#    #+#             */
+/*   Updated: 2020/01/30 11:43:18 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "get_next_line.h"
 
-int	ft_strcmp(char *s1, char *s2)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	while (*s != '\0')
+	{
 		i++;
-	return (s1[i] - s2[i]);
-}
-
-long	ft_atoi(const char *str)
-{
-	long	a;
-	int		b;
-	int		c;
-
-	a = 0;
-	b = 0;
-	c = 1;
-	while (((*str <= 13) && (*str >= 9)) || (*str == 32))
-		str++;
-	while ((*str == '+') || (*str == '-'))
-	{
-		if (*str == '-')
-			c = -1;
-		b++;
-		str++;
+		s++;
 	}
-	if (b > 1)
-		return (0);
-	while ((*str <= '9') && (*str >= '0'))
-	{
-		a = (*str - 48) + a * 10;
-		str++;
-	}
-	return (a * c);
+	return (i);
 }
 
 char	*ft_strdup(const char *s1)
@@ -68,6 +43,20 @@ char	*ft_strdup(const char *s1)
 	return (a);
 }
 
+char	*ft_strchr(const char *s, int c)
+{
+	size_t	i;
+	char	str;
+
+	i = 0;
+	str = c;
+	while (s[i] && s[i] != str)
+		i++;
+	if (s[i] == str)
+		return ((char *)&s[i]);
+	return (NULL);
+}
+
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	i;
@@ -78,8 +67,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (ft_strdup(s2));
 	if (!s2)
 		return (ft_strdup(s1));
-	a = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!a)
+	if (!(a = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
 	i = -1;
 	l = 0;
@@ -89,4 +77,33 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		a[i++] = s2[l++];
 	a[i] = '\0';
 	return (a);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*x;
+	size_t	i;
+
+	if (s == NULL)
+		return (NULL);
+	if (start > ft_strlen(s))
+		len = 0;
+	i = 0;
+	if (len > ft_strlen(s + start))
+	{
+		if (!(x = (char *)malloc(sizeof(char) * len > ft_strlen(s + start))))
+			return (NULL);
+	}
+	else
+	{
+		if (!(x = (char *)malloc(sizeof(char) * len + 1)))
+			return (NULL);
+	}
+	while (i < len)
+	{
+		x[i] = s[i + start];
+		i++;
+	}
+	x[i] = '\0';
+	return (x);
 }

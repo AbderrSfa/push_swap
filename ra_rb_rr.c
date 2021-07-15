@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:36:54 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 10:38:16 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:32:07 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void	ft_rb(t_stacks *stacks, int print)
 	stacks->stack_b.array[stacks->stack_b.in_use - 1] = temp;
 }
 
-void	ft_rr(t_stacks *stacks)
+void	ft_rr(t_stacks *stacks, int print)
 {
-	ft_putendl_fd("rr", 1);
+	if (print == PRINT)
+		ft_putendl_fd("rr", 1);
 	ft_ra(stacks, NO_PRINT);
 	ft_rb(stacks, NO_PRINT);
 }

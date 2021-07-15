@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 13:11:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:28:25 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 int			ft_isdigit(int c);
 size_t		ft_strlen(const char *s);
+int		ft_strcmp(char *s1, char *s2);
 long		ft_atoi(const char *str);
 char		*ft_strdup(const char *s1);
 char		*ft_strjoin(const char *s1, const char *s2);
@@ -50,15 +51,15 @@ char		**ft_split(char const *s, char v);
 //	push_swap instructions:
 void		ft_sa(t_stacks *stacks, int print);
 void		ft_sb(t_stacks *stacks, int print);
-void		ft_ss(t_stacks *stacks);
-void		ft_pa(t_stacks *stacks);
-void		ft_pb(t_stacks *stacks);
+void		ft_ss(t_stacks *stacks, int print);
+void		ft_pa(t_stacks *stacks, int print);
+void		ft_pb(t_stacks *stacks, int print);
 void		ft_ra(t_stacks *stacks, int print);
 void		ft_rb(t_stacks *stacks, int print);
-void		ft_rr(t_stacks *stacks);
+void		ft_rr(t_stacks *stacks, int print);
 void		ft_rra(t_stacks *stacks, int print);
 void		ft_rrb(t_stacks *stacks, int print);
-void		ft_rrr(t_stacks *stacks);
+void		ft_rrr(t_stacks *stacks, int print);
 
 // Initial setup:
 char		*args_to_string(char **argv);

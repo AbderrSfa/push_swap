@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:36:17 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 10:38:13 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:31:38 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ void	pop_stack_up(int *array, int in_use)
 	}
 }
 
-void	ft_pb(t_stacks *stacks)
+void	ft_pb(t_stacks *stacks, int print)
 {
 	int		i;
 
 	i = 0;
-	ft_putendl_fd("pb", 1);
+	if (print == PRINT)
+		ft_putendl_fd("pb", 1);
 	if (stacks->stack_a.in_use == 0)
 		return ;
 	if (stacks->stack_b.in_use == 0)
@@ -53,12 +54,13 @@ void	ft_pb(t_stacks *stacks)
 	stacks->stack_a.in_use--;
 }
 
-void	ft_pa(t_stacks *stacks)
+void	ft_pa(t_stacks *stacks, int print)
 {
 	int		i;
 
 	i = 0;
-	ft_putendl_fd("pa", 1);
+	if (print == PRINT)
+		ft_putendl_fd("pa", 1);
 	if (stacks->stack_b.in_use == 0)
 		return ;
 	if (stacks->stack_a.in_use == 0)

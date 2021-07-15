@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:35:10 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 10:38:45 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:31:18 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ void	ft_sb(t_stacks *stacks, int print)
 	}
 }
 
-void	ft_ss(t_stacks *stacks)
+void	ft_ss(t_stacks *stacks, int print)
 {
-	ft_putendl_fd("ss", 1);
+	if (print == PRINT)
+		ft_putendl_fd("ss", 1);
 	ft_sa(stacks, NO_PRINT);
 	ft_sb(stacks, NO_PRINT);
 }
