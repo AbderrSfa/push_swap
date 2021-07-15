@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_ten.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 16:27:38 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 10:52:35 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:51:54 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	sort_six_to_ten(t_stacks *stacks)
 	while (stacks->stack_a.in_use > 5)
 	{
 		get_smallest_to_top_ten(stacks);
-		ft_pb(stacks);
+		ft_pb(stacks, PRINT);
 	}
 	sort_four_or_five(stacks);
 	while (stacks->stack_a.in_use != stacks->stack_a.size)
-		ft_pa(stacks);
+		ft_pa(stacks, PRINT);
 }

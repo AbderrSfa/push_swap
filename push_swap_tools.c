@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_tools.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:57:22 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 11:00:06 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:50:44 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	move_to_b(t_stacks *stacks, int chunk_endpoint)
 	while (index != -1)
 	{
 		move_to_top(stacks, index);
-		ft_pb(stacks);
+		ft_pb(stacks, PRINT);
 		index = get_number_within_chunk(stacks, chunk_endpoint);
 	}
 }

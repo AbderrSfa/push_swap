@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three_and_five.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 11:59:04 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 10:52:25 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:52:18 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,13 @@ void	sort_four_or_five(t_stacks *stacks)
 	while (stacks->stack_a.in_use > 3)
 	{
 		get_smallest_to_top_five(stacks);
-		ft_pb(stacks);
+		ft_pb(stacks, PRINT);
 		i++;
 	}
 	sort_three_numbers(stacks);
 	while (i > 0)
 	{
-		ft_pa(stacks);
+		ft_pa(stacks, PRINT);
 		i--;
 	}
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   execute_instructions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 17:11:12 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 17:22:13 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 00:15:50 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_select_instruction(char *line, t_stacks *stacks)
+void	execute_instruction(char *line, t_stacks *stacks)
 {
 	if (!ft_strcmp(line, "sa"))
 		ft_sa(stacks, NO_PRINT);

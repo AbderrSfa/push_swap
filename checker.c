@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 17:10:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 17:23:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 00:15:39 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	ret = 0;
 	while (get_next_line(0, &line) == 1)
 	{
-		ft_select_instruction(line, &stacks);
+		execute_instruction(line, &stacks);
 		free(line);
 	}
 	free(line);

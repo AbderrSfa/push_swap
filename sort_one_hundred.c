@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_one_hundred.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 12:04:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 11:01:35 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:51:33 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void	sort_rest_of_numbers(t_stacks *stacks, int used_size)
 		while (stacks->stack_a.in_use >= 5)
 		{
 			get_smallest_to_top_ten(stacks);
-			ft_pb(stacks);
+			ft_pb(stacks, PRINT);
 		}
 		sort_four_or_five(stacks);
 		while (stacks->stack_a.in_use != used_size)
-			ft_pa(stacks);
+			ft_pa(stacks, PRINT);
 	}
 }
 
@@ -93,6 +93,6 @@ void	sort_one_hundred(t_stacks *stacks)
 	while (stacks->stack_b.in_use != 0)
 	{
 		get_biggest_to_top(stacks);
-		ft_pa(stacks);
+		ft_pa(stacks, PRINT);
 	}
 }

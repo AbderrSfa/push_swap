@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five_hundred.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:59:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 11:00:34 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:50:59 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void	sort_five_hundred(t_stacks *stacks)
 	while (stacks->stack_b.in_use != 0)
 	{
 		get_biggest_to_top(stacks);
-		ft_pa(stacks);
+		ft_pa(stacks, PRINT);
 	}
 }

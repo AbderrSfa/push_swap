@@ -3,14 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 14:07:52 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/02/03 16:25:56 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:35:11 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*ft_strchr(const char *s, int c)
+{
+	size_t	i;
+	char	str;
+
+	i = 0;
+	str = c;
+	while (s[i] && s[i] != str)
+		i++;
+	if (s[i] == str)
+		return ((char *)&s[i]);
+	return (NULL);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*x;
+	size_t	i;
+
+	if (s == NULL)
+		return (NULL);
+	if (start > ft_strlen(s))
+		len = 0;
+	i = 0;
+	if (len > ft_strlen(s + start))
+	{
+		if (!(x = (char *)malloc(sizeof(char) * len > ft_strlen(s + start))))
+			return (NULL);
+	}
+	else
+	{
+		if (!(x = (char *)malloc(sizeof(char) * len + 1)))
+			return (NULL);
+	}
+	while (i < len)
+	{
+		x[i] = s[i + start];
+		i++;
+	}
+	x[i] = '\0';
+	return (x);
+}
 
 int		get_line(char **string, int n, char **line, int fd)
 {
