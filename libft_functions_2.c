@@ -6,11 +6,25 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:43:23 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 17:28:12 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 10:31:44 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	*ft_strchr(const char *s, int c)
+{
+	size_t	i;
+	char	str;
+
+	i = 0;
+	str = c;
+	while (s[i] && s[i] != str)
+		i++;
+	if (s[i] == str)
+		return ((char *)&s[i]);
+	return (NULL);
+}
 
 int	ft_strcmp(char *s1, char *s2)
 {

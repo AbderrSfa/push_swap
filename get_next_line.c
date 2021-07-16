@@ -3,27 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
+/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 14:07:52 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 22:35:11 by abderr_sfa       ###   ########.fr       */
+/*   Updated: 2021/07/16 10:31:29 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+static size_t	ft_smallest(const char *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	str;
-
-	i = 0;
-	str = c;
-	while (s[i] && s[i] != str)
-		i++;
-	if (s[i] == str)
-		return ((char *)&s[i]);
-	return (NULL);
+	if (len > ft_strlen(s + start))
+		return (ft_strlen(s + start) + 1);
+	return (len + 1);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -36,17 +29,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > ft_strlen(s))
 		len = 0;
 	i = 0;
-	if (len > ft_strlen(s + start))
-	{
-		if (!(x = (char *)malloc(sizeof(char) * len > ft_strlen(s + start))))
-			return (NULL);
-	}
-	else
-	{
-		if (!(x = (char *)malloc(sizeof(char) * len + 1)))
-			return (NULL);
-	}
-	while (i < len)
+	x = (char *)malloc(sizeof(char) * ft_smallest(s, start, len));
+	if (x == 0)
+		return (NULL);
+	while (i < (ft_smallest(s, start, len) - 1))
 	{
 		x[i] = s[i + start];
 		i++;
@@ -55,59 +41,74 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (x);
 }
 
-int		get_line(char **string, int n, char **line, int fd)
+int	get_line(char **str, int n, char **line, int fd)
 {
 	char	*temp;
 	int		i;
 
 	i = 0;
-	while (string[fd][i] && string[fd][i] != '\n')	//Looks for \n or \0
+	while (str[fd][i] && str[fd][i] != '\n')
 		i++;
-	*line = ft_substr(string[fd], 0, i);			//Assigns the line
-	if (!string[fd][i])								//If \0 is reached string gets NULL
+	*line = ft_substr(str[fd], 0, i);
+	if (!str[fd][i])
 	{
-		temp = string[fd];
-		string[fd] = NULL;
+		temp = str[fd];
+		str[fd] = NULL;
 		free(temp);
 		return (0);
 	}
-	else											//If \n is reached the line printed is removed
+	else
 	{
-		temp = string[fd];
-		string[fd] = ft_strdup((string[fd]) + i + 1);
+		temp = str[fd];
+		str[fd] = ft_strdup((str[fd]) + i + 1);
 		free(temp);
 	}
-	if (!string[fd] || !*line)
+	if (!str[fd] || !*line)
 		return (-1);
-	if (n || (n == 0 && string[fd] != NULL))
+	if (n || (n == 0 && str[fd] != NULL))
 		return (1);
 	return (-1);
 }
 
-int		get_next_line(int fd, char **line)
+int	ft_read_line(int fd, char *str[4864], char *buf)
 {
-	char			*buffer;
-	static char		*string[4864];
+	char	*temp;
+	int		n;
+
+	n = read(fd, buf, BUFFER_SIZE);
+	while (n)
+	{
+		temp = str[fd];
+		buf[n] = '\0';
+		str[fd] = ft_strjoin(str[fd], buf);
+		if (!str[fd])
+			return (-1);
+		free(temp);
+		if (ft_strchr(str[fd], '\n') != NULL)
+			break ;
+	}
+	return (1);
+}
+
+int	get_next_line(int fd, char **line)
+{
+	char			*buf;
+	static char		*str[4864];
 	char			*temp;
 	int				n;
 
-	buffer = NULL;
-	if (!line || fd < 0 || fd >= 4864 || BUFFER_SIZE <= 0 ||
-			read(fd, buffer, 0) == -1 || !(buffer = malloc(BUFFER_SIZE + 1)))
+	buf = malloc(BUFFER_SIZE + 1);
+	if (!line || fd < 0 || fd >= 4864 || BUFFER_SIZE <= 0
+		|| !buf || read(fd, buf, 0) == -1)
 		return (-1);
-	if (!string[fd])								//Protection against segfault in case the file is empty
-		if (!(string[fd] = ft_strdup("")))
-			return (-1);
-	while ((n = read(fd, buffer, BUFFER_SIZE)))		//Reads until file is empty or \n is found
+	if (!str[fd])
 	{
-		temp = string[fd];
-		buffer[n] = '\0';
-		if (!(string[fd] = ft_strjoin(string[fd], buffer)))
+		str[fd] = ft_strdup("");
+		if (!str[fd])
 			return (-1);
-		free(temp);
-		if (ft_strchr(string[fd], '\n') != NULL)	//Breaks if \n is found
-			break ;
 	}
-	free(buffer);
-	return (get_line(string, n, line, fd));
+	if (ft_read_line(fd, str, buf) == -1)
+		return (-1);
+	free(buf);
+	return (get_line(str, n, line, fd));
 }

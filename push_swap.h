@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:09:43 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 17:28:25 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 10:33:12 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 int			ft_isdigit(int c);
 size_t		ft_strlen(const char *s);
-int		ft_strcmp(char *s1, char *s2);
+int			ft_strcmp(char *s1, char *s2);
+char		*ft_strchr(const char *s, int c);
 long		ft_atoi(const char *str);
 char		*ft_strdup(const char *s1);
 char		*ft_strjoin(const char *s1, const char *s2);
