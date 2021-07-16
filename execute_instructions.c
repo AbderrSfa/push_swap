@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 17:11:12 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/16 10:23:54 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 11:18:47 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	execute_instruction(char *line, t_stacks *stacks)
 	else if (!ft_strcmp(line, "rrr"))
 		ft_rrr(stacks, NO_PRINT);
 	else
-		exit(end_program(0, "Error", stacks));
+		exit(end_program(1, "Error", stacks));
 }

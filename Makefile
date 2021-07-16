@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+         #
+#    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/15 11:04:13 by asfaihi           #+#    #+#              #
-#    Updated: 2021/07/16 00:18:27 by abderr_sfa       ###   ########.fr        #
+#    Updated: 2021/07/16 10:46:36 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ PUSH_SWAP_SRC = push_swap.c check_errors.c fill_stacks.c libft_functions.c libft
 		sort_three_and_five.c
 
 CHECKER_SRC = checker.c execute_instructions.c get_next_line.c libft_functions.c \
-		libft_functions_2.c libft_functions_3.c  sa_sb_ss.c pa_pb.c ra_rb_rr.c \
+		libft_functions_2.c libft_functions_3.c sa_sb_ss.c pa_pb.c ra_rb_rr.c \
 		rra_rrb_rrr.c fill_stacks.c check_errors.c
 
 FLAGS = -Wall -Wextra -Werror
