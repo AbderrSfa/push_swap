@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 17:10:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/16 10:23:47 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 10:37:46 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ int	main(int argc, char **argv)
 	char		*line;
 	t_stacks	stacks;
 	char		*str;
-	int			ret;
 
 	if (argc == 1)
 		return (0);
 	str = args_to_string(argv);
 	stacks = ft_fill_stacks(str);
 	line = NULL;
-	ret = 0;
 	while (get_next_line(0, &line) == 1)
 	{
 		execute_instruction(line, &stacks);
