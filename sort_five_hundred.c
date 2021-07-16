@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:59:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/16 10:40:12 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 16:39:03 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	sort_five_hundred(t_stacks *stacks)
 
 	i = 1;
 	sorted_array = sort_array(stacks);
-	while (i != 8)
+	while (i != 12)
 	{
 		chunk_endpoint = get_chunk_endpoint(sorted_array,
-				stacks->stack_a.size, i, 8);
+				stacks->stack_a.size, i, 12);
 		move_to_b(stacks, chunk_endpoint);
 		i++;
 	}
