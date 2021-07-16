@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:46:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 13:09:40 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 15:34:38 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	duplicate_arg(t_stacks *stacks, int num)
 int	stack_is_sorted(t_stacks *stacks)
 {
 	int		i;
-	int		temp;
 
 	i = 0;
 	while (i < stacks->stack_a.size - 1)

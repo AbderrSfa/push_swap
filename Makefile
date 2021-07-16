@@ -6,7 +6,7 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/15 11:04:13 by asfaihi           #+#    #+#              #
-#    Updated: 2021/07/16 10:46:36 by asfaihi          ###   ########.fr        #
+#    Updated: 2021/07/16 15:37:34 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,23 +23,24 @@ CHECKER_SRC = checker.c execute_instructions.c get_next_line.c libft_functions.c
 		libft_functions_2.c libft_functions_3.c sa_sb_ss.c pa_pb.c ra_rb_rr.c \
 		rra_rrb_rrr.c fill_stacks.c check_errors.c
 
+HEADERS = push_swap.h checker.h get_next_line.h
+
 FLAGS = -Wall -Wextra -Werror
 
 PUSH_SWAP_OBJECT = $(PUSH_SWAP_SRC:.c=.o)
 
 CHECKER_OBJECT = $(CHECKER_SRC:.c=.o)
 
+all: $(CHECKER_NAME) $(PUSH_SWAP_NAME) 
 
-all: $(CHECKER_NAME) $(PUSH_SWAP_NAME)
+$(PUSH_SWAP_NAME): $(PUSH_SWAP_OBJECT) $(HEADERS)
+	gcc $(PUSH_SWAP_OBJECT) -o $(PUSH_SWAP_NAME)
 
-$(PUSH_SWAP_NAME): $(PUSH_SWAP_OBJECT)
-	gcc $(FLAGS) $(PUSH_SWAP_OBJECT) -o $(PUSH_SWAP_NAME)
-
-$(CHECKER_NAME): $(CHECKER_OBJECT)
-	gcc $(FLAGS) $(CHECKER_OBJECT) -o $(CHECKER_NAME)
+$(CHECKER_NAME): $(CHECKER_OBJECT) $(HEADERS)
+	gcc $(CHECKER_OBJECT) -o $(CHECKER_NAME)
 
 %.o:%.c
-	gcc -c $<
+	gcc $(FLAGS) -c $<
 
 clean:
 	/bin/rm -f $(PUSH_SWAP_OBJECT)

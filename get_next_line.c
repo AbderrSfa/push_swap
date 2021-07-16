@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 14:07:52 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/16 10:31:29 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/16 15:34:23 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ int	get_next_line(int fd, char **line)
 {
 	char			*buf;
 	static char		*str[4864];
-	char			*temp;
 	int				n;
 
+	n = 0;
 	buf = malloc(BUFFER_SIZE + 1);
 	if (!line || fd < 0 || fd >= 4864 || BUFFER_SIZE <= 0
 		|| !buf || read(fd, buf, 0) == -1)
