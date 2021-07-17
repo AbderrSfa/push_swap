@@ -1,8 +1,10 @@
-# Description
+# 🔄 push_swap
+
+# 🧐 Description
 
 The aim of this project is to sort a stack of numbers, using a limited set of instructions, and the lowest possible number of actions. You will have to look into different types of algorithms and choose the most appropriate one for an optimized solution.
 
-## Synopsis
+## 📖 Synopsis
 **push_swap** is a straigh-forward and effective algorithm project: There is data. Said data needs to be sorted.
 You have a set of integers, 2 stacks (stack a, and stack b) and a set of instructions to manipulate both stacks.
 
@@ -12,7 +14,7 @@ The first, called **push_swap** which will receive a list of integers as argumen
 
 The second one, **checker** (which is a bonus part of the project), also takes a list of integers and will read instructions on the standard input. Once read,checker executes them and displays OK if the entered insturctions result in the integers being properly sorted. Otherwise, it will display KO.
 
-## push_swap instructions
+## 🧰 push_swap instructions
 **sa:** swap a - swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
 
 **sb:** swap b - swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
@@ -35,7 +37,7 @@ The second one, **checker** (which is a bonus part of the project), also takes a
 
 **rrr:** rra and rrb at the same time.
 
-# Compilation
+# ⚙️ Compilation
 To compile checker, run:
 
 `make checker`
@@ -48,18 +50,21 @@ To compile both, run:
 
 `make`
 
-# Usage
-### push_swap
+# 🔧 Usage
+***push_swap***
+
 Example: `./push_swap -9 8 3 20 -5`
 
 ![Screenshot from 2021-07-17 22-04-58](https://user-images.githubusercontent.com/58333462/126049356-e8db0151-38ee-4fa6-a2da-98fa0cdb6612.png)
 
-### checker
+***checker***
+
 Exapmle: `./checker -9 8 3 20 -5` then will wait for your input
 
 ![Screenshot from 2021-07-17 22-06-15](https://user-images.githubusercontent.com/58333462/126049384-93a1db06-2f36-4c83-9d91-9092d57266e2.png)
 
-### Both
+***Both***
+
 To execute both push_swap and checker: `./push_swap -9 8 3 20 -5 | ./checker -9 8 3 20 -5`
 
 ![Screenshot from 2021-07-17 22-07-26](https://user-images.githubusercontent.com/58333462/126049406-6fce7635-02b8-45c8-8fe7-7635125356e6.png)
