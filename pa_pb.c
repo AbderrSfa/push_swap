@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abderr_sfa <abderr_sfa@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 10:36:17 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/07/15 17:31:38 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/07/17 21:28:47 by abderr_sfa       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void	pop_stack_up(int *array, int in_use)
 
 void	ft_pb(t_stacks *stacks, int print)
 {
-	int		i;
-
-	i = 0;
 	if (print == PRINT)
 		ft_putendl_fd("pb", 1);
 	if (stacks->stack_a.in_use == 0)
@@ -56,9 +53,6 @@ void	ft_pb(t_stacks *stacks, int print)
 
 void	ft_pa(t_stacks *stacks, int print)
 {
-	int		i;
-
-	i = 0;
 	if (print == PRINT)
 		ft_putendl_fd("pa", 1);
 	if (stacks->stack_b.in_use == 0)
