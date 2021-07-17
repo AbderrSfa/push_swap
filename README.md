@@ -52,13 +52,14 @@ To compile both, run:
 ### push_swap
 Example: `./push_swap -9 8 3 20 -5`
 
+![Screenshot from 2021-07-17 22-04-58](https://user-images.githubusercontent.com/58333462/126049356-e8db0151-38ee-4fa6-a2da-98fa0cdb6612.png)
+
 ### checker
 Exapmle: `./checker -9 8 3 20 -5` then will wait for your input
+
+![Screenshot from 2021-07-17 22-06-15](https://user-images.githubusercontent.com/58333462/126049384-93a1db06-2f36-4c83-9d91-9092d57266e2.png)
 
 ### Both
 To execute both push_swap and checker: `./push_swap -9 8 3 20 -5 | ./checker -9 8 3 20 -5`
 
-About
-This project will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the one (of many) most appropriate solution for an optimized data sorting
-
-c checker algo 42 1337 pushswap 42cursus sort-data
+![Screenshot from 2021-07-17 22-07-26](https://user-images.githubusercontent.com/58333462/126049406-6fce7635-02b8-45c8-8fe7-7635125356e6.png)
